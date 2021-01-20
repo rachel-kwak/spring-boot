@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" >
+    <title>Title</title>
+</head>
+<body>
+    <h1 th:text="${result}"></h1>
+    <h1 th:text="${dto}"></h1>
+
+<!-- 속성값을 javascript로 지정.
+/sample/exInline으로 호출하면 브라우저가 /sample/ex3로 리다이렉트.
+dto는 JSON 포맷의 문자열이 되고, 객체로 변환하려면 .parse 사용 -->
+    <script th:inilne="javascript">
+        var msg = [[ ${result} ]];
+        var dto = [[ ${dto} ]];
+    </script>
+</body>
+</html>

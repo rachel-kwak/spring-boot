@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- 기본 사용 -->
+    <ul>
+        <li th:each="dto : ${list}">
+            [[ ${dto} ]]
+        </li>
+    </ul>
+<!-- 반복문의 상태 객체 -->
+<!-- 상태 객체에서는 index(0부터 시작) 혹은 count(1부터 시작)라는 속성을 이용할 수 있다 -->
+    <ul>
+        <li th:each="dto, state : ${list}">
+            [[ ${state.index} ]] -- [[ ${dto} ]]
+        </li>
+    </ul>
+<!-- 제어문 처리 -->
+<!-- 보통 if~ else가 하나의 구문으로 처리되지만 Thymeleaf는 단독으로 처리 -->
+    <ul>
+        <li th:each="dto, state : ${list}">
+            <span th:if="${dto.sno % 5 == 0}" th:text="${'----------' + dto.sno}"></span>
+            <span th:unless="${dto.sno % 5 == 0}" th:text="${dto.first}"></span>
+        </li>
+    </ul>
+<!-- 삼항 연산자와 스타일 적용 & th:block -->
+    <ul>
+        <th:block th:each="dto : ${list}">
+            <li th:text="${dto.sno % 5 == 0} ? ${dto.sno} : ${dto.first}"
+                th:class="${dto.sno % 5 == 0} ? 'target'"></li>
+        </th:block>
+    </ul>
+</body>
+</html>
+
+<style>
+    .target {
+        background-color: red;
+    }
+</style>

@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!-- 전체 내용을 layout1.html로 처리하고 파라미터로 현재 파일의 content 부분만을 전달 -->
+<th:block th:replace="~{/layout/layout1 :: setContent(~{this::content})}">
+    <th:block th:fragment="content">
+        <h1>exTemplate Page</h1>
+    </th:block>
+</th:block>
+</html>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<!-- Thymeleaf의 기본적인 사용 방법은 기존의 속성 앞에 :th를 붙여주고 속성값을 지정하는 것.
+ JSP와 달리 별도의 태그를 이용하지 않고 HTML을 그대로 유지한 상태에서 필요한 내용을 추가해서 개발 가능-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1 th:text="${'Hello World'}"></h1>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- first와 second라는 파라미터를 받을 수 있도록 구성
+실제 target을 사용하는 작업은 exLayout2.html에서 진행 -->
+    <div th:fragment="target(first, second)">
+        <style>
+            .c1 {
+                background-color: red;
+            }
+            .c2 {
+                background-color: blue;
+            }
+        </style>
+        <div class="c1">
+            <th:block th:replace="${first}"></th:block>
+        </div>
+        <div class="c2">
+            <th:block th:replace="${second}"></th:block>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="setContent(content)">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            .header {
+                width: 100vw;
+                height: 20vh;
+                background-color: aqua;
+            }
+            .content {
+                width: 100vw;
+                height: 70vh;
+                background-color: lightgray;
+            }
+            .footer {
+                width: 100vw;
+                height: 10vh;
+                background-color: green;
+            }
+        </style>
+
+        <div class="header">
+            <h1>HEADER</h1>
+        </div>
+    <!--    실제 개발에서는 다른 내용으로 변경되어야 하는 부분 -->
+        <div class="content">
+    <!--        <h1>CONTENT</h1>-->
+            <th:block th:replace="${content}"></th:block>
+        </div>
+        <div class="footer">
+            <h1>FOOTER</h1>
+        </div>
+    </body>
+</th:block>
+</html>

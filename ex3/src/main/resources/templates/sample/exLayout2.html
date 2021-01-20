@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!-- 화면 구성 관련 기능이 없지만 target을 사용할 때 파라미터 2개를 사용.
+fragment3에서 전달된 태그들이 포함되어서 출력됨 -->
+<th:block th:replace="~{/fragments/fragment3:: target(~{this:: #ulFirst}, ~{this::#ulSecond})}">
+    <ul id="ulFirst">
+        <li>AAA</li>
+        <li>BBB</li>
+        <li>CCC</li>
+    </ul>
+    <ul id="ulSecond">
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+</th:block>
+</html>
