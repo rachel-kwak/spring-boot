@@ -1,0 +1,14 @@
+version: "3.1"
+services:
+  db:
+    container_name: ex2_db
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_DATABASE: ex2_db
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_HOST: '%'
+    ports:
+      - 3306:3306
+    volumes:
+      - $HOME/temp/ex2.sql:/ex2.sql
