@@ -11,6 +11,7 @@ public interface BoardService {
     PageResultDTO<BoardDTO, Object[]> getList(PageRequestDTO pageRequestDTO);   // 목록 처리
     BoardDTO get(Long bno);
     void removeWithReplies(Long bno);
+    void modify(BoardDTO boardDTO);
 
     // 실제 처리 과정에서 BoardDTO를 Board 엔티티 타입으로 변환할 필요가 있는데, 아래 함수를 사용
     default Board dtoToEntity(BoardDTO dto) {
