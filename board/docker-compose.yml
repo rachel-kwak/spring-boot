@@ -1,0 +1,14 @@
+version: "3.1"
+services:
+  db:
+    container_name: board_db
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_DATABASE: board_db
+      MYSQL_ROOT_PASSWORD: board
+      MYSQL_ROOT_HOST: '%'
+    ports:
+      - 3306:3306
+    volumes:
+      - $HOME/temp/board.sql:/board.sql
