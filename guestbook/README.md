@@ -15,6 +15,25 @@
 
 <br>
 
+## Project Settings
+
+- Gradle Project
+- SpringBoot 2.4.2
+- War Packaging
+- Java Version 11
+
+<br>
+
+## Dependencies
+
+- Spring Boot DevTools
+- Lombok
+- Spring Web
+- Thymeleaf
+- Spring Data JPA
+
+<br>
+
 ## Show your support
 
 Give a ⭐️ if this project helped you!
