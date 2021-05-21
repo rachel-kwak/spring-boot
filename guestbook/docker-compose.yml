@@ -1,0 +1,14 @@
+version: "3.1"
+services:
+  db:
+    container_name: guestbook_db
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_DATABASE: guestbook_db
+      MYSQL_ROOT_PASSWORD: guestbook
+      MYSQL_ROOT_HOST: '%'
+    ports:
+      - 3306:3306
+    volumes:
+      - $HOME/temp/guestbook.sql:/guestbook.sql
